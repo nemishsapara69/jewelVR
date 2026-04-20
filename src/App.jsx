@@ -3,7 +3,7 @@ import LoadingOverlay from './components/LoadingOverlay.jsx';
 import OrnamentSelector from './components/OrnamentSelector.jsx';
 import ControlBar from './components/ControlBar.jsx';
 import CameraView from './components/CameraView.jsx';
-import ARCanvas from './components/ARCanvas.jsx';
+import ThreeARCanvas from './components/ThreeARCanvas.jsx';
 import ChatAssistant from './components/ChatAssistant.jsx';
 import { useFaceDetection } from './hooks/useFaceDetection.js';
 import { usePoseDetection } from './hooks/usePoseDetection.js';
@@ -70,7 +70,7 @@ export default function App() {
               mirrored={mirrored}
             />
 
-            <ARCanvas
+            <ThreeARCanvas
               videoRef={cameraRef}
               ornament={selectedOrnament}
               mirrored={mirrored}
