@@ -50,7 +50,10 @@ export default function OrnamentSelector({ selectedOrnament, onSelect }) {
                 onError={(e) => { e.target.style.opacity = '0.3'; }}
               />
             </div>
-            <span className="ornament-name">{ornament.name}</span>
+            <div className="ornament-info">
+              <span className="ornament-name">{ornament.name}</span>
+              <span className="ornament-price">${ornament.price.toLocaleString()}</span>
+            </div>
             {selectedOrnament?.id === ornament.id && (
               <span className="selected-badge">✓ Wearing</span>
             )}

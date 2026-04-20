@@ -4,6 +4,7 @@ import OrnamentSelector from './components/OrnamentSelector.jsx';
 import ControlBar from './components/ControlBar.jsx';
 import CameraView from './components/CameraView.jsx';
 import ARCanvas from './components/ARCanvas.jsx';
+import ChatAssistant from './components/ChatAssistant.jsx';
 import { useFaceDetection } from './hooks/useFaceDetection.js';
 import { usePoseDetection } from './hooks/usePoseDetection.js';
 import './App.css';
@@ -78,6 +79,21 @@ export default function App() {
               onScreenshotReady={handleScreenshotReady}
             />
 
+            {/* Product Detail Card */}
+            {selectedOrnament && (
+              <div className="product-card-overlay">
+                <div className="product-card-header">
+                  <span className="product-material">{selectedOrnament.material}</span>
+                  <h4 className="product-title">{selectedOrnament.name}</h4>
+                </div>
+                <p className="product-description">{selectedOrnament.description}</p>
+                <div className="product-card-footer">
+                  <span className="product-price">${selectedOrnament.price.toLocaleString()}</span>
+                  <button className="buy-now-btn">Buy Now</button>
+                </div>
+              </div>
+            )}
+
             {/* Flash effect on screenshot */}
             {flashVisible && <div className="screenshot-flash" aria-hidden="true" />}
 
@@ -91,6 +107,7 @@ export default function App() {
           </div>
         </div>
       </div>
+      <ChatAssistant onSelectOrnament={setSelectedOrnament} />
     </>
   );
 }

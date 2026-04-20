@@ -152,12 +152,25 @@
   transform: scale(1.1);
 }
 
+.ornament-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  flex: 1;
+}
+
 .ornament-name {
   font-family: 'Inter', sans-serif;
   font-size: 0.82rem;
   color: rgba(255, 255, 255, 0.85);
   font-weight: 500;
-  flex: 1;
+}
+
+.ornament-price {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.72rem;
+  color: #d4af37;
+  font-weight: 600;
 }
 
 .selected-badge {
