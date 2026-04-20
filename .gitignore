@@ -24,6 +24,10 @@ dist-ssr
 *.key
 secrets/
 
+# Documents
+*.docx
+Project Overview.docx
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
