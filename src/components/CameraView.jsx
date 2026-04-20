@@ -118,7 +118,7 @@ const CameraView = forwardRef(function CameraView(
           <div className="upload-icon">📁</div>
           <p className="upload-title">Drop your selfie here</p>
           <p className="upload-sub">or click to browse · JPG, PNG, MP4 supported</p>
-          <button id="btn-browse" className="upload-btn">Browse File</button>
+          <button id="btn-browse" className="upload-btn" onClick={(e) => { e.stopPropagation(); triggerUpload(); }}>Browse File</button>
         </div>
       )}
 
