@@ -150,8 +150,44 @@ function Scene({ videoRef, ornament, mirrored, onDetectionChange }) {
 }
 
 export default function ThreeARCanvas({ videoRef, ornament, mirrored, onDetectionChange }) {
+  const [size, setSize] = useState({ width: 0, height: 0, top: 0, left: 0 });
+
+  useEffect(() => {
+    const video = videoRef.current?.getVideoEl();
+    if (!video) return;
+
+    const updateSize = () => {
+      const rect = video.getBoundingClientRect();
+      setSize({
+        width: rect.width,
+        height: rect.height,
+        top: video.offsetTop,
+        left: video.offsetLeft
+      });
+    };
+
+    const ro = new ResizeObserver(updateSize);
+    ro.observe(video);
+    updateSize();
+    window.addEventListener('resize', updateSize);
+    return () => {
+      ro.disconnect();
+      window.removeEventListener('resize', updateSize);
+    };
+  }, [videoRef]);
+
+  if (size.width === 0) return null;
+
   return (
-    <div className="canvas-container" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 10, pointerEvents: 'none' }}>
+    <div className="canvas-container" style={{ 
+      position: 'absolute', 
+      top: size.top, 
+      left: size.left, 
+      width: size.width, 
+      height: size.height, 
+      zIndex: 10, 
+      pointerEvents: 'none' 
+    }}>
       <Canvas dpr={[1, 2]}>
         <PerspectiveCamera makeDefault position={[0, 0, 5]} fov={50} />
         <React.Suspense fallback={null}>
