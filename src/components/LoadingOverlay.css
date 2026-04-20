@@ -1,0 +1,90 @@
+.loading-overlay {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(ellipse at center, #0f0b1e 0%, #050508 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: overlayIn 0.4s ease;
+}
+
+@keyframes overlayIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.loading-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.loading-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.logo-jewel {
+  font-size: 2.2rem;
+  color: #d4af37;
+  animation: pulse 1.8s ease-in-out infinite;
+}
+
+.logo-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.4rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, #d4af37 0%, #f9e07a 50%, #b8860b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 0.06em;
+}
+
+.spinner-ring {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 2px solid rgba(212, 175, 55, 0.15);
+  border-top-color: #d4af37;
+  animation: spin 1s linear infinite;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spinner-dot {
+  width: 8px;
+  height: 8px;
+  background: #d4af37;
+  border-radius: 50%;
+  box-shadow: 0 0 12px #d4af37;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.6; transform: scale(0.92); }
+}
+
+.loading-message {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+}
+
+.loading-sub {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  color: rgba(212, 175, 55, 0.5);
+  margin: 0;
+  letter-spacing: 0.04em;
+}
