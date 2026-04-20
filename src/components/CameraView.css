@@ -37,6 +37,8 @@
   cursor: pointer;
   padding: 2rem;
   transition: background 0.25s;
+  position: relative;
+  z-index: 100;
 }
 
 .upload-prompt:hover {
