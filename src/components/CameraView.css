@@ -6,16 +6,21 @@
   justify-content: center;
   background: #000;
   overflow: hidden;
+  padding: 2rem; /* Added padding to create space around the feed */
 }
 
 .camera-feed {
-  width: 100%;
-  height: 100%;
+  max-width: 95%;
+  max-height: 95%;
+  width: auto;
+  height: auto;
   object-fit: contain;
   object-position: center;
   display: block;
   filter: brightness(1.05) contrast(1.05) saturate(1.1);
   transition: filter 0.3s ease;
+  border-radius: 24px; /* Luxury rounded corners */
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(212, 175, 55, 0.1);
 }
 
 .camera-feed.hidden {
