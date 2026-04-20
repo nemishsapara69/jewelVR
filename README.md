@@ -125,4 +125,4 @@ MIT — free to use, modify, and distribute.
 
 ---
 
-*Built as a demo for [Nemish Sapara](https://github.com/nemishsapara69)*
+*Built as a demo for [Nemish Sapara](https://github.com/nemishsapara69)*
